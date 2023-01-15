@@ -6,8 +6,14 @@ class Categoria(models.Model):
     data_criacao = models.DateTimeField(auto_now_add=True)
     data_ultima_atualizacao = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        ordering = ('nome',)
+        verbose_name = 'categoria'
+        verbose_name_plural = 'categorias'
+
     def __str__(self):
         return self.nome
+
 
 class Produto(models.Model):
     categoria = models.ForeignKey(Categoria, related_name='produtos', on_delete=models.CASCADE)
@@ -20,6 +26,10 @@ class Produto(models.Model):
     data_criacao = models.DateTimeField(auto_now_add=True)
     data_ultima_atualizacao = models.DateTimeField(auto_now=True)
     imagem = models.ImageField(upload_to='imagens-produtos', blank=True)
+
+    class Meta:
+        ordering = ('nome', )
+        index_together = (('id', 'slug'),)
 
     def __str__(self):
         return self.nome
