@@ -10,6 +10,7 @@ class Categoria(models.Model):
         return self.nome
 
 class Produto(models.Model):
+    categoria = models.ForeignKey(Categoria, related_name='produtos', on_delete=models.CASCADE)
     nome = models.CharField(max_length=100, db_index=True)
     slug = models.SlugField(max_length=100, db_index=True)
     descricao = models.TextField(blank=True)
