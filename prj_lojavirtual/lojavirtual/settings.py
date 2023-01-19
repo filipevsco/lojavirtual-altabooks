@@ -164,3 +164,7 @@ LOGGING = {
         },
     },
 }
+
+EMAIL_FALE_CONOSCO = 'filipev@me.com'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
