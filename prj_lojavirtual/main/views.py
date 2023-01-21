@@ -30,7 +30,7 @@ def listar_produtos(request, slug_categoria=None):
 
 
 def detalhes_produto(request, id, slug_produto):
-    produto = get_object_or_404(Produto, id=id, slug=slug_produto, disponivel=True)
+    produto = get_object_or_404(Produto, slug=slug_produto, disponivel=True)
     contexto = {
         'produto': produto,
     }

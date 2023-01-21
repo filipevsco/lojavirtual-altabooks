@@ -133,8 +133,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'upload')
-MEDIA_URL = '/upload/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'imagens-produtos')
+MEDIA_URL = '/media/'
 
 LOGGING = {
     'version': 1,
