@@ -29,7 +29,7 @@ def listar_produtos(request, slug_categoria=None):
     return render(request, 'produto/listar.html', contexto)
 
 
-def detalhes_produto(request, id, slug_produto):
+def detalhes_produto(request, slug_produto):
     produto = get_object_or_404(Produto, slug=slug_produto, disponivel=True)
     contexto = {
         'produto': produto,
