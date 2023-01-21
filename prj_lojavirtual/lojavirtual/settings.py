@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
+    'carrinho.apps.CarrinhoConfig',
 ]
 
 MIDDLEWARE = [
@@ -168,3 +169,5 @@ LOGGING = {
 EMAIL_FALE_CONOSCO = 'filipev@me.com'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ID_CARRINHO = 'carrinho'
