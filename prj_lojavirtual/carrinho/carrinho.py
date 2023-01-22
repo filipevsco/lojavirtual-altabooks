@@ -18,9 +18,9 @@ class Carrinho:
                 'preco': str(produto.preco),
             }
         if atualizar_quantidade:
-            self.__carrinho['id_produto']['quantidade'] = quantidade
+            self.__carrinho[id_produto]['quantidade'] = quantidade
         else:
-            self.__carrinho['id_produto']['quantidade'] += quantidade
+            self.__carrinho[id_produto]['quantidade'] += quantidade
         self.__salvar()
     
     def __salvar(self):
@@ -44,19 +44,19 @@ class Carrinho:
             item['subtotal']=Decimal(item['preco'])*Decimal(item['quantidade'])
             yield item
         
-        def __len__(self):
-            resultado = 0
-            for item in self.__carrinho.values():
-                resultado += item['quantidade']
-            return resultado
-        
-        def get_total_geral(self):
-            resultado = Decimal(0.0)
-            for item in self.__carrinho.values():
-                subtotal = Decimal(item['quantidade']) * Decimal(item['preco'])
-                resultado = resultado + subtotal
-            return resultado
-        
-        def limpar_carrinho(self):
-            del self.__sessao[settings.ID_CARRINHO]
-            self.__salvar()
+    def __len__(self):
+        resultado = 0
+        for item in self.__carrinho.values():
+            resultado += item['quantidade']
+        return resultado
+    
+    def get_total_geral(self):
+        resultado = Decimal(0.0)
+        for item in self.__carrinho.values():
+            subtotal = Decimal(item['quantidade']) * Decimal(item['preco'])
+            resultado = resultado + subtotal
+        return resultado
+    
+    def limpar_carrinho(self):
+        del self.__sessao[settings.ID_CARRINHO]
+        self.__salvar()

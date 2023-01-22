@@ -2,6 +2,7 @@ from django.views.generic.edit import FormView
 from main import forms
 from django.shortcuts import render, get_object_or_404
 from .models import Categoria, Produto
+from carrinho.forms import FormAdicionarProdutoAoCarrinho
 
 
 class ViewFaleConosco(FormView):
@@ -31,7 +32,9 @@ def listar_produtos(request, slug_categoria=None):
 
 def detalhes_produto(request, slug_produto):
     produto = get_object_or_404(Produto, slug=slug_produto, disponivel=True)
+    form_adicionar_produto_ao_carrinho = FormAdicionarProdutoAoCarrinho
     contexto = {
         'produto': produto,
+        'form_produto_carrinho': form_adicionar_produto_ao_carrinho,
     }
     return render(request, 'produto/detalhes.html', contexto)

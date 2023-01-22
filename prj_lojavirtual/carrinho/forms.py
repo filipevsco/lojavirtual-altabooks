@@ -8,5 +8,5 @@ for i in range(0,50): #50 produtos no max
 
 
 class FormAdicionarProdutoAoCarrinho(forms.Form):
-    quantidade = forms.TypeChoiceField(choices=OPCOES_QUANTIDADE_PRODUTO, coerce=int)
+    quantidade = forms.TypedChoiceField(choices=OPCOES_QUANTIDADE_PRODUTO, coerce=int)
     atualizar = forms.BooleanField(required=False, widget=forms.HiddenInput)
