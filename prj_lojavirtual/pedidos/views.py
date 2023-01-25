@@ -17,7 +17,7 @@ def criar_pedido(request):
                     quantidade = item['quantidade']
                     )
             carrinho.limpar_carrinho()
-            return render(request, 'pedidos/pedido/concluir.html' {'pedido': pedido})
+            return render(request, 'pedidos/pedido/concluir.html', {'pedido': pedido})
     else:
         form = FormCriarPedido()
-    return render(request, 'pedidos/pedido/criar.html', {'carrinho': carrinho, 'form': form'})
+    return render(request, 'pedidos/pedido/criar.html', {'carrinho': carrinho, 'form': form})
