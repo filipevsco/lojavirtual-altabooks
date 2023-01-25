@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import ItemPedido
 from .forms import FormCriarPedido
 from carrinho.carrinho import Carrinho
+from decimal import Decimal
 
 def criar_pedido(request):
     carrinho = Carrinho(request)
