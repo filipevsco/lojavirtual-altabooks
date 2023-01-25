@@ -25,7 +25,7 @@ class Pedido(models.Model):
 
     def get_total_geral(self):
         resultado = Decimal(0.0)
-        for item in self.intens.all():
+        for item in self.itens.all():
             subtotal = Decimal(item['quantidade']) * Decimal(item['preco'])
             resultado = resultado + subtotal
         return resultado
