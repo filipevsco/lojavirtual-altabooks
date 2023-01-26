@@ -1,8 +1,8 @@
 
 <nav class="py-2 bg-light border-bottom">
     <div class="container d-flex flex-wrap">
-        <ul class="nav me-auto">
-            <li class="nav-item"><a href="/" class="nav-link link-dark px-2 active" aria-current="page">Home</a></li>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li class="nav-item"><a href="/" class="nav-link link-dark px-2" aria-current="page">Home</a></li>
             <li class="nav-item"><a href="/admin/main/categoria/" class="nav-link link-dark px-2">Manutenção de Categorias</a></li>
             <li class="nav-item"><a href="/admin/main/produto/" class="nav-link link-dark px-2">Manutenção de Produtos</a></li>
             <li class="nav-item"><a href="/produtos/" class="nav-link link-dark px-2">Loja</a></li>
@@ -13,13 +13,12 @@
         <ul class="nav">
             <li class="nav-item">
                 {% with quantidade_itens=carrinho|length %}
-                    {% if carrinho|length > 0 %}
-                        Seu carrinho de compras:
-                        <a class="nav-link text-light" href=" {% url 'carrinho:detalhes_carrinho' %}">
-                            {{ quantidade_itens }} produto {{ quantidade_itens|pluralize }} - R$ {{ carrinho.get_total_geral }}
+                    {% if carrinho|length > 0 %} 
+                        <a class="nav-link" href=" {% url 'carrinho:detalhes_carrinho' %}">
+                            {{ quantidade_itens }} produto {{ quantidade_itens|pluralize }}  no carrinho: R$ {{ carrinho.get_total_geral }}
                         </a>
                     {% else %}
-                        Seu carrinho está vazio;
+                        Carrinho vazio
                     {% endif %}
                 {% endwith %}
             </li>
