@@ -10,18 +10,18 @@
             <li class="nav-item"><a href="/ajuda/" class="nav-link link-dark px-2">Ajuda</a></li>
 
         </ul>
-        <ul class="nav">
-            <li class="nav-item">
-                {% with quantidade_itens=carrinho|length %}
-                    {% if carrinho|length > 0 %} 
-                        <a class="nav-link" href=" {% url 'carrinho:detalhes_carrinho' %}">
-                            {{ quantidade_itens }} produto {{ quantidade_itens|pluralize }}  no carrinho: R$ {{ carrinho.get_total_geral }}
-                        </a>
-                    {% else %}
-                        Carrinho vazio
-                    {% endif %}
-                {% endwith %}
-            </li>
+        <ul class="nav">       
+            {% with quantidade_itens=carrinho|length %}
+                {% if carrinho|length > 0 %}
+                <li class="nav-item"> 
+                    <a class="nav-link" href=" {% url 'carrinho:detalhes_carrinho' %}">
+                        {{ quantidade_itens }} produto {{ quantidade_itens|pluralize }}  no carrinho: R$ {{ carrinho.get_total_geral }}
+                    </a>
+                </li>
+                {% else %}
+                    <li class="nav-item p-2">Carrinho vazio</li>
+                {% endif %}
+            {% endwith %}
         </ul>
     </div>
 </nav>
