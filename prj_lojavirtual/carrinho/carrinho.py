@@ -61,4 +61,4 @@ class Carrinho:
 
     def limpar_carrinho(self):
         del self.__sessao[settings.ID_CARRINHO]
-        self.__salvar()
+        #  self.__salvar()

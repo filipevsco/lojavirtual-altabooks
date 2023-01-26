@@ -10,7 +10,9 @@ def criar_pedido(request):
         form = FormCriarPedido(request.POST)
         if form.is_valid():
             pedido = form.save()
+            print(pedido)
             for item in carrinho:
+                print(item)
                 ItemPedido.objects.create(
                     pedido = pedido,
                     produto = item['produto'],
