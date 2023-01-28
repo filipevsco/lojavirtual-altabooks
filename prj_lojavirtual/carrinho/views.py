@@ -26,7 +26,10 @@ def remover_do_carrinho(request, id_produto):
 
 def detalhes_carrinho(request):
     carrinho = Carrinho(request)
-    for item in carrinho:
-        item['formulario_adicionar_produto_ao_carrinho'] = FormAdicionarProdutoAoCarrinho(
-            initial={'quantidade': item['quantidade'],'atualizar': True})
+    if carrinho:
+        for item in carrinho:
+            item['formulario_adicionar_produto_ao_carrinho'] = FormAdicionarProdutoAoCarrinho(
+                initial={'quantidade': item['quantidade'],'atualizar': True})
         return render(request, 'carrinho/detalhes.html', {'carrinho': carrinho})
+    else:
+        return redirect('main:listar_produtos')
