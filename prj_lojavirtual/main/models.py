@@ -30,7 +30,7 @@ class Produto(models.Model):
     estoque = models.PositiveIntegerField()
     data_criacao = models.DateTimeField(auto_now_add=True)
     data_ultima_atualizacao = models.DateTimeField(auto_now=True)
-    imagem = StdImageField(upload_to='imagens-produtos', variations={'thumbnail': {"width": 400, "height": 400, "crop": True}}, blank=True)
+    imagem = StdImageField(upload_to='upload/imagens-produtos/', variations={'thumbnail': {"width": 230, "height": 320, "crop": True}}, blank=True)
 
     class Meta:
         ordering = ('nome', )
