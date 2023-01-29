@@ -20,7 +20,7 @@
                                     <a href="{{ produto.get_absolute_url}}">
                                         <img src=" 
                                             {% if produto.imagem %}
-                                                {{ produto.imagem.url }}
+                                                {{ produto.imagem.thumbnail.url }}
                                             {% else %}
                                                 {% static 'img/default.png' %}
                                             {% endif %}"

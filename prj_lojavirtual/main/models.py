@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from stdimage import StdImageField
 
 class Categoria(models.Model):
     nome = models.CharField(max_length=150, db_index=True)
@@ -29,7 +30,7 @@ class Produto(models.Model):
     estoque = models.PositiveIntegerField()
     data_criacao = models.DateTimeField(auto_now_add=True)
     data_ultima_atualizacao = models.DateTimeField(auto_now=True)
-    imagem = models.ImageField(upload_to='imagens-produtos', blank=True)
+    imagem = StdImageField(upload_to='imagens-produtos', variations={'thumbnail': {"width": 400, "height": 400, "crop": True}}, blank=True)
 
     class Meta:
         ordering = ('nome', )
