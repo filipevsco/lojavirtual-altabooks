@@ -18,11 +18,11 @@
                             <div class="col-md-4" style="width: 20rem;">
                                 <div class="thumbnail text-center">
                                     <a class="text-center" href="{{ produto.get_absolute_url}}">
-                                        <img src=" 
+                                        <img style="height: 320px;" src=" 
                                             {% if produto.imagem %}
                                                 {{ produto.imagem.thumbnail.url }}
                                             {% else %}
-                                                {% static 'img/default.jpg' %}
+                                                {% static 'img/dafault.jpeg' %}
                                             {% endif %}"
                                             alt="Imagem de {{ produto.nome }}"
                                             class="img-thumbnail">
