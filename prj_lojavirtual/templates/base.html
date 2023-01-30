@@ -11,8 +11,10 @@
   </head>
   <body>
     {% include 'snippets/barra_navegacao.html' %}
+    <div class="container">
     {% block conteudo %}
     {% endblock conteudo %}
+    </div>
     {% include 'snippets/rodape.html' %}
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
