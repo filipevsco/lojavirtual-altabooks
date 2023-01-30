@@ -10,12 +10,30 @@
 
 {% block conteudo %}
     <div class="container-fluid">
-        <div class="row" style="margin-top: 6%">
-            <div class="col-sm-8 loja-colecao">
-                <div class="loja-item">
-                    <div class="row">
+        <div class="row" style="margin-top: 1em">
+            <!-- INICIO COLUNA LATERAL ESQUERDA-->
+            <div class="col-lg-3 col-md-3 col-sm-6 border">
+                <div class='sidebar-module border'>
+                    <h4>Categorias</h4>
+                    <ol class="list-unstyled">
+                        <li {% if not categoria %} class="active" {% endif %}>
+                            <a href="{% url 'main:listar_produtos' %}">Todos</a>
+                        </li>
+                        {% for c in lista_categorias %}
+                            <li {% if categoria.slug == c.slug %} class="active" {% endif %}>
+                                <a href="{{ c.get_absolute_url }}">
+                                    {{ c.nome }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ol>
+                </div>
+            </div>
+            <!--FIM COLUNA LATERAL ESQUERDA-->
+            <div class="col-lg-9 col-md-9 col-sm-6 border">
+                    <div class="row border">
                         {% for produto in lista_produtos %}
-                            <div class="col-md-4" style="width: 20rem;">
+                            <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-12" style="">
                                 <div class="thumbnail text-center">
                                     <a class="text-center" href="{{ produto.get_absolute_url}}">
                                         <img style="height: 320px;" src=" 
@@ -44,25 +62,8 @@
                             </div>
                         {% endfor %}
                     </div>
-                </div>
             </div>
-            <div class="col-sm-3 col-sm-offset-1 loja-sidebar">
-                <div class='sidebar-module'>
-                    <h4>Categorias</h4>
-                    <ol class="list-unstyled">
-                        <li {% if not categoria %} class="active" {% endif %}>
-                            <a href="{% url 'main:listar_produtos' %}">Todos</a>
-                        </li>
-                        {% for c in lista_categorias %}
-                            <li {% if categoria.slug == c.slug %} class="active" {% endif %}>
-                                <a href="{{ c.get_absolute_url }}">
-                                    {{ c.nome }}
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ol>
-                </div>
-            </div>
+
         </div>
     </div>
 {% endblock conteudo %}
