@@ -10,10 +10,10 @@
 
 {% block conteudo %}
     <div class="container-fluid">
-        <div class="row" style="margin-top: 1em">
+        <div class="row" style="margin-top: 1em; margin-bottom: 4em">
             <!-- INICIO COLUNA LATERAL ESQUERDA-->
-            <div class="col-lg-3 col-md-3 col-sm-6 border">
-                <div class='sidebar-module border'>
+            <div class="col-lg-3 col-md-3 col-sm-6 ">
+                <div class='sidebar-module '>
                     <h4>Categorias</h4>
                     <ol class="list-unstyled">
                         <li {% if not categoria %} class="active" {% endif %}>
@@ -30,8 +30,8 @@
                 </div>
             </div>
             <!--FIM COLUNA LATERAL ESQUERDA-->
-            <div class="col-lg-9 col-md-9 col-sm-6 border">
-                    <div class="row border">
+            <div class="col-lg-9 col-md-9 col-sm-6 ">
+                    <div class="row ">
                         {% for produto in lista_produtos %}
                             <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-12" style="">
                                 <div class="thumbnail text-center">
