@@ -32,8 +32,9 @@
             <!--FIM COLUNA LATERAL ESQUERDA-->
             <div class="col-lg-9 col-md-9 col-sm-6 ">
                     <div class="row ">
+                        <!-- INICIO CARD LIVRO-->
                         {% for produto in lista_produtos %}
-                            <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-12" style="">
+                            <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-12 border p-3">
                                 <div class="thumbnail text-center">
                                     <a class="text-center" href="{{ produto.get_absolute_url}}">
                                         <img style="height: 320px;" src=" 
@@ -51,20 +52,16 @@
                                                 {{ produto.nome }}
                                             </a>
                                         </p>
-                                        <h3 class="text-center">
+                                        <h3 class="text-success">
                                             R$ {{ produto.preco }}
                                         </h3>
-                                        <p class="text-center">
-                                            {% comment %} {{ produto.descricao|truncatechars:200 }} {% endcomment %}
-                                            <a class="text-black" href="{{ produto.get_absolute_url }}">Veja detalhes</a>
-                                        </p>
                                     </div>
                                 </div>
                             </div>
                         {% endfor %}
+                        <!--FIM CARD LIVRO-->
                     </div>
             </div>
-
         </div>
     </div>
 {% endblock conteudo %}
