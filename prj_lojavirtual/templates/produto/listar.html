@@ -46,17 +46,18 @@
                                             class="img-thumbnail">
                                     </a>
                                     <div class="caption p-2">
-                                        <h4>
+                                        <p>
                                         <a class="text-dark" style="text-decoration: none;" href="{{ produto.get_absolute_url }}">
                                                 {{ produto.nome }}
                                             </a>
-                                        </h4>
-                                            <p class="text-center">
-                                                {{ produto.descricao }}
-                                            </p>
-                                            <h3 class="text-center">
-                                                R$ {{ produto.preco }}
-                                            </h3>
+                                        </p>
+                                        <h3 class="text-center">
+                                            R$ {{ produto.preco }}
+                                        </h3>
+                                        <p class="text-center">
+                                            {% comment %} {{ produto.descricao|truncatechars:200 }} {% endcomment %}
+                                            <a class="text-black" href="{{ produto.get_absolute_url }}">Veja detalhes</a>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
