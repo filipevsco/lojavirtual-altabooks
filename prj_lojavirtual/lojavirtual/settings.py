@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'carrinho.apps.CarrinhoConfig',
     'pedidos.apps.PedidosConfig',
 
+    'widget_tweaks',
+
 ]
 
 MIDDLEWARE = [
