@@ -13,10 +13,10 @@
         <div class="row" style="margin-top: 1em; margin-bottom: 4em">
             <!-- INICIO COLUNA LATERAL ESQUERDA-->
             <div class="col-lg-3 col-md-3 col-sm-6 ">
-                <div class='sidebar-module '>
+                <div class='sidebar-module pt-3'>
                     <h4>Categorias</h4>
                     <div class="list-group">
-                        <a href="{% url 'main:listar_produtos' %}"" class="list-group-item list-group-item-action">Todos</a>
+                        <a href="{% url 'main:listar_produtos' %}" class="list-group-item list-group-item-action">Todos</a>
                         {% for c in lista_categorias %}
                             <a href="{{ c.get_absolute_url }}" class="list-group-item list-group-item-action">
                                 {{ c.nome }}
@@ -26,11 +26,12 @@
                 </div>
             </div>
             <!--FIM COLUNA LATERAL ESQUERDA-->
+
             <div class="col-lg-9 col-md-9 col-sm-6 ">
                     <div class="row ">
                         <!-- INICIO CARD LIVRO-->
                         {% for produto in lista_produtos %}
-                            <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-12 border p-3">
+                            <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-12 p-3">
                                 <div class="thumbnail text-center">
                                     <a class="text-center" href="{{ produto.get_absolute_url}}">
                                         <img style="height: 320px; width: auto;" src=" 
@@ -42,7 +43,7 @@
                                             alt="Imagem de {{ produto.nome }}"
                                             class="img-thumbnail">
                                     </a>
-                                    <div class="caption p-2">
+                                    <div class="caption pt-2">
                                         <p>
                                         <a class="text-dark" style="text-decoration: none;" href="{{ produto.get_absolute_url }}">
                                                 {{ produto.nome }}
