@@ -15,18 +15,14 @@
             <div class="col-lg-3 col-md-3 col-sm-6 ">
                 <div class='sidebar-module '>
                     <h4>Categorias</h4>
-                    <ol class="list-unstyled">
-                        <li {% if not categoria %} class="active" {% endif %}>
-                            <a href="{% url 'main:listar_produtos' %}">Todos</a>
-                        </li>
+                    <div class="list-group">
+                        <a href="{% url 'main:listar_produtos' %}"" class="list-group-item list-group-item-action">Todos</a>
                         {% for c in lista_categorias %}
-                            <li {% if categoria.slug == c.slug %} class="active" {% endif %}>
-                                <a href="{{ c.get_absolute_url }}">
-                                    {{ c.nome }}
-                                </a>
-                            </li>
+                            <a href="{{ c.get_absolute_url }}" class="list-group-item list-group-item-action">
+                                {{ c.nome }}
+                            </a>
                         {% endfor %}
-                    </ol>
+                    </div>
                 </div>
             </div>
             <!--FIM COLUNA LATERAL ESQUERDA-->
